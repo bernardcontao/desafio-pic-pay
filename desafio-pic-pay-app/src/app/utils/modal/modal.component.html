@@ -1,0 +1,16 @@
+<div class="modal mt-5 {{cssClass}}" tabindex="-1" role="dialog" aria-hidden="true" #modalEl>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <ng-content select="[modal-header]"></ng-content>
+        <span class="close" (click)="closeModal()">&times;</span>
+      </div>
+      <div class="modal-body">
+        <ng-content select="[modal-body]"></ng-content>
+      </div>
+      <div class="modal-footer">
+        <ng-content select="[modal-footer]"></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

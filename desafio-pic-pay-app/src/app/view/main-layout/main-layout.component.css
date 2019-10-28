@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Nunito Sans');
+body {
+  margin: 0;
+  color: #212529;
+  background-color: #FFF;
+  font-family: Roboto;
+  font-style: normal;
+}
+
+.navbar {
+  background: #7DE6C6;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+  align-items: center;
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: #474971;
+}
+
+.navbar-brand svg {
+  margin-right: 12px;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar-brand {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.btn-pic-pay {
+  background: linear-gradient(180deg, #B4F4E5 0%, #7DE6C6 100%);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 24px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #474971;
+}

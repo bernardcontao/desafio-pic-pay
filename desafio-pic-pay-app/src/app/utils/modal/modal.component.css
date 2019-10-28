@@ -1,0 +1,35 @@
+.modal-content {
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+}
+
+.modal-dialog {
+  max-width: 700px;
+}
+
+.modal-header {
+  background: #474971;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+.modal-footer {
+  border-top: 0;
+}
+
+.close {
+  cursor: pointer;
+  color: #fff;
+  opacity: 1;
+  font-size: 34px;
+  font-weight: 100;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.modal-p-0 .modal-body {
+  padding-left: 0;
+  padding-right: 0;
+}

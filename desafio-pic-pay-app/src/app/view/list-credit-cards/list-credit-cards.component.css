@@ -1,0 +1,14 @@
+  .select-card {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: #474971;
+  }
+  
+  .select-card .credit-card {
+    cursor: pointer;
+  }
+  
+  .select-card .selected {
+    background: rgba(125, 230, 198, 0.24);
+  }

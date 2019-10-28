@@ -1,0 +1,61 @@
+<app-modal #modal="modal" *ngIf="user">
+  <div modal-header>Pagamento para
+    <span class="user-title">{{user.name}}
+    </span>
+  </div>
+
+  <div modal-body>
+    <div class="col-12 col-md-8 offset-md-2 d-flex align-items-center justify-content-center p-0">
+      <div class="row justify-content-center">
+        <div class="col-3">
+          <img [src]="user.img" class="img-fluid rounded-circle" alt="img-usuario">
+        </div>
+        <div class="col-5 user-info d-flex flex-column p-0 justify-content-center">
+          <div class="user-name">
+            {{user.name}}
+          </div>
+          <div class="mt-2 d-flex">
+            <div class="mr-1">
+              id: {{user.id}}
+            </div>
+            <div>
+              {{user.username}}
+            </div>
+          </div>
+        </div>
+        <div class="col-8 my-5">
+          <input name="value" currencyMask [(ngModel)]="value" class="input input-value w-100 text-center" placeholder="R$ 0,00" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" required />
+        </div>
+        <div class="col-12 my-2 border-top">
+        </div>
+        <div class="col-8 my-2 d-flex payment-info" (click)="selectCard()" *ngIf="selectedPaymentMethod">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M9.23411 21.9999L2.80645 21.9999C2.32373 22.0043 1.85967 21.8169 1.51959 21.4801C1.17951 21.1433 0.992247 20.6857 1.00025 20.2191L1.00028 6.78681C0.994283 6.31344 1.182 5.85755 1.52125 5.52156C1.8605 5.18557 2.32284 4.99767 2.80195 5.00006L25.1935 5.00008C25.6763 4.99566 26.1403 5.18313 26.4804 5.51994C26.8205 5.85675 27.0078 6.31433 26.9998 6.78088V12.3284L26.9997 20.2132C27.0057 20.6866 26.818 21.1425 26.4788 21.4784C26.1395 21.8144 25.6772 22.0023 25.198 21.9999H9.23411ZM9.23411 21.0489L25.2005 21.0489C25.4225 21.05 25.6357 20.9634 25.7922 20.8084C25.9486 20.6535 26.0351 20.4433 26.0323 20.2191V12.3284L26.0323 11.8951H26.516V8.68535H26.0324L26.0324 6.77294C26.0361 6.55492 25.9501 6.34468 25.7938 6.18993C25.6376 6.03518 25.4243 5.94905 25.198 5.9511L2.79951 5.95109C2.57746 5.94999 2.36428 6.03663 2.20785 6.19155C2.05142 6.34648 1.96487 6.55669 1.96767 6.78088L1.96766 8.68535H1.48396V11.8951H1.96764L1.9676 20.2271C1.9639 20.4451 2.04993 20.6553 2.20619 20.8101C2.36244 20.9648 2.57566 21.051 2.80195 21.0489H9.23411ZM1.96764 11.8951L1.96766 8.68535H26.0324L26.0323 11.8951H1.96764ZM3.66066 18.4489C3.39351 18.4489 3.17695 18.236 3.17695 17.9733C3.17695 17.7107 3.39351 17.4978 3.66066 17.4978H5.83736C6.10451 17.4978 6.32108 17.7107 6.32108 17.9733C6.32108 18.236 6.10451 18.4489 5.83736 18.4489H3.66066ZM7.53035 17.9733C7.53035 18.236 7.74692 18.4489 8.01407 18.4489H15.6325C15.8997 18.4489 16.1162 18.236 16.1162 17.9733C16.1162 17.7107 15.8997 17.4978 15.6325 17.4978H8.01407C7.74692 17.4978 7.53035 17.7107 7.53035 17.9733Z"
+              fill="#474971" />
+          </svg>
+          <div class="ml-2">
+            Forma de pagamento:<br />
+            <div class="font-weight-bold"><u>Cartão de Crédito com final {{selectedPaymentMethod.number}}</u></div>
+          </div>
+        </div>
+        <div class="col-8 my-2 d-flex payment-info" (click)="insertCard()" *ngIf="!selectedPaymentMethod">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM11.2074 12.3586H8.80154L8.4226 3.5901H11.5863L11.2074 12.3586ZM8.45344 14.5001C8.37413 14.6822 8.33447 14.879 8.33447 15.0905C8.33447 15.302 8.37413 15.4988 8.45344 15.6809C8.53276 15.8631 8.64585 16.0202 8.79273 16.1524C8.9396 16.2846 9.11292 16.3889 9.31267 16.4653C9.51242 16.5416 9.73567 16.5798 9.98242 16.5798C10.2292 16.5798 10.4524 16.5416 10.6522 16.4653C10.8519 16.3889 11.0252 16.2846 11.1721 16.1524C11.319 16.0202 11.4321 15.8631 11.5114 15.6809C11.5907 15.4988 11.6304 15.302 11.6304 15.0905C11.6304 14.879 11.5907 14.6822 11.5114 14.5001C11.4321 14.3179 11.319 14.1608 11.1721 14.0286C11.0252 13.8964 10.8519 13.7921 10.6522 13.7157C10.4524 13.6394 10.2292 13.6012 9.98242 13.6012C9.73567 13.6012 9.51242 13.6394 9.31267 13.7157C9.11292 13.7921 8.9396 13.8964 8.79273 14.0286C8.64585 14.1608 8.53276 14.3179 8.45344 14.5001Z"
+              fill="#EF5778" />
+          </svg>
+          <div class="ml-2 without-card">
+            Nenhum cartão de crédito cadastrado.<br />
+            <div class="font-weight-bold"><u>Cadastrar agora.</u></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div modal-footer class="col-12">
+    <button (click)="pay()" type="button" class="btn p-3 btn-pic-pay w-100">Pagar</button>
+  </div>
+</app-modal>

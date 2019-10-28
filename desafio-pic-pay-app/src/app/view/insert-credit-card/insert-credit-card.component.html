@@ -1,0 +1,43 @@
+<app-modal #modal="modal" *ngIf="paymentMethod">
+  <div modal-header>Cadastro Cartão de Crédito
+  </div>
+
+  <div modal-body>
+    <div class="container">
+      <section>
+        <div class="input-container my-4">
+          <select id="card-network" [(ngModel)]="paymentMethod.network" required>
+            <option disabled></option>
+            <option *ngFor="let network of networksOptions" [ngValue]="network.id">{{network.name}}</option>
+          </select>
+          <label class="label" for="card-network">Selecione a bandeira</label>
+        </div>
+        <div class="input-container my-4">
+          <input [(ngModel)]="paymentMethod.nameInThecard" id="name-in-card" class="input" type="text" required />
+          <label class="label" for="name-in-card">Nome escrito no cartão</label>
+        </div>
+        <div class="input-container my-4">
+          <input [(ngModel)]="paymentMethod.number" id="card-number" class="input" type="text" required />
+          <label class="label" for="card-number">Número do Cartão</label>
+        </div>
+        <div class="input-container my-4">
+          <input [(ngModel)]="paymentMethod.expirationDate" id="card-expiration-date" class="input" type="text" required />
+          <label class="label" for="card-expiration-date">Validade (mm/aaaa)</label>
+        </div>
+        <div class="input-container my-4">
+          <input [(ngModel)]="paymentMethod.cvv" id="card-cvv" class="input" type="text" required />
+          <label class="label" for="card-cvv">Código de segurança</label>
+        </div>
+        <div class="input-container my-4">
+          <input [(ngModel)]="paymentMethod.billingCepAddress" id="card-billing-cep-address" class="input" type="text" required />
+          <label class="label" for="card-billing-cep-address">CEP do endereço da fatura</label>
+        </div>
+      </section>
+    </div>
+  </div>
+
+
+  <div modal-footer class="col-12">
+    <button (click)="createCard()" type="button" class="btn p-3 btn-pic-pay w-100">Cadastrar</button>
+  </div>
+</app-modal>

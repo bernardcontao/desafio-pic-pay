@@ -1,0 +1,36 @@
+img {
+  border: 2px solid #FFFFFF;
+  box-sizing: border-box;
+}
+
+.user-info {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+}
+
+.user-title {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.user-pay {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .user-title {
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .user-info {
+    font-size: 13px;
+    line-height: 14px;
+  }
+}

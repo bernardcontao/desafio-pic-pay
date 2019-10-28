@@ -1,0 +1,44 @@
+  .user-title {
+    color: #7DE6C6;
+  }
+  
+  .user-info {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #474971;
+  }
+  
+  .user-name {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+  }
+  
+  .input-value {
+    border: 0;
+    border-bottom: 2px solid #9e9e9e;
+    outline: none;
+    transition: .2s ease-in-out;
+    box-sizing: border-box;
+    font-family: Nunito Sans;
+    font-size: 48px;
+    font-style: normal;
+    line-height: 65px;
+    color: #7DE6C6;
+  }
+  
+  .payment-info {
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 16px;
+    color: #474971;
+  }
+  
+  .payment-info .without-card {
+    color: #EF5778;
+  }
+  
+  .btn-pay:hover {
+    background: linear-gradient(180deg, rgb(151, 245, 223) 0%, rgb(106, 196, 169) 100%);
+  }
