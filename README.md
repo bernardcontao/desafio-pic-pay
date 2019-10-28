@@ -4,13 +4,16 @@ Criar pagina de pagamento efetuado
 Tratar visual da modal no mobile
 
 Criar testes
-Criar mascaras do insert-card
-Criar validacao detalhada do insert-card
 Criar alertService
+Criar validacao detalhada do insert-card
+Criar mascaras do insert-card
+Criar component para svgs
 
 Sobre: 
 Segui uma abordagem de 'routear' as modais via named outlet, tal abordagem infelizmente me custou bastante tempo, 
   mas cria uma usabilidade muito melhor entre modais, principalmente para mobile.
+Nunca usei a plataforma Figma, não entendi direito se tinha algum texto sobre o comportamento da tela ou não, se teve algum comportamento que eu deixei passar provavelmente esse foi o motivo.
+
 
 Referencias
 https://medium.com/@zainzafar/routable-modals-in-angular-64fb213199c7
